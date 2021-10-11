@@ -1,4 +1,4 @@
-package me.gabriel.tddsandbox;
+package me.gabriel.tddsandbox.shopping;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ public class ShoppingBasket {
 
   private final List<Item> items;
 
-  public ShoppingBasket(List<Item> items) {
+  public ShoppingBasket(final List<Item> items) {
     this.items = items;
   }
 
