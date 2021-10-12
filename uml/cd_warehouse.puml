@@ -1,0 +1,35 @@
+@startuml
+
+!theme reddress-darkorange
+
+class Catalogue {
+    + search(title, artist)
+}
+
+class Warehouse {
+    + receive(label, batch)
+}
+
+class CD {
+    - title
+    - artist
+    - price
+    + buy(quantity)
+    + getStockCount()
+}
+
+class StockItem
+class Batch
+class Label
+
+left to right direction
+
+Catalogue "1" <-down- Warehouse
+Catalogue --left--> "*" CD
+StockItem "*" <-down-> "1" CD
+Warehouse --> "*" StockItem
+CD "*" <---> "1" Label
+Batch --> "1..*" StockItem
+
+
+@enduml
